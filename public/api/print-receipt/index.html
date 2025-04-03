@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Receipt Print Data</title>
+    <script>
+      // This is a mock API endpoint that would return receipt data in the format
+      // expected by the Bluetooth Print app
+
+      function getQueryParam(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+      }
+
+      // In a real implementation, this would fetch data from the server
+      // based on the receipt ID. For now, we'll use mock data.
+      const mockReceiptData = {
+        type: "receipt",
+        items: [
+          {
+            type: 0,
+            content: "BARBERSHOP POS",
+            bold: 1,
+            align: 1,
+            format: 2,
+          },
+          {
+            type: 0,
+            content: "Jl. Contoh No. 123, Jakarta",
+            bold: 0,
+            align: 1,
+            format: 0,
+          },
+          {
+            type: 0,
+            content: "Tel: 021-1234567",
+            bold: 0,
+            align: 1,
+            format: 0,
+          },
+          {
+            type: 0,
+            content: "Date: " + new Date().toLocaleDateString("id-ID"),
+            bold: 0,
+            align: 1,
+            format: 0,
+          },
+          {
+            type: 0,
+            content: "--------------------------------",
+            bold: 0,
+            align: 1,
+            format: 0,
+          },
+          {
+            type: 0,
+            content: "Regular Haircut",
+            bold: 0,
+            align: 0,
+            format: 0,
+          },
+          {
+            type: 0,
+            content: "Rp75,000",
+            bold: 0,
+            align: 2,
+            format: 0,
+          },
+          {
+            type: 0,
+            content: "Beard Trim",
+            bold: 0,
+            align: 0,
+            format: 0,
+          },
+          {
+            type: 0,
+            content: "Rp50,000",
+            bold: 0,
+            align: 2,
+            format: 0,
+          },
+          {
+            type: 0,
+            content: "--------------------------------",
+            bold: 0,
+            align: 1,
+            format: 0,
+          },
+          {
+            type: 0,
+            content: "Subtotal: Rp125,000",
+            bold: 0,
+            align: 2,
+            format: 0,
+          },
+          {
+            type: 0,
+            content: "Tax (10%): Rp12,500",
+            bold: 0,
+            align: 2,
+            format: 0,
+          },
+          {
+            type: 0,
+            content: "TOTAL: Rp137,500",
+            bold: 1,
+            align: 2,
+            format: 1,
+          },
+          {
+            type: 0,
+            content: "Payment: Cash",
+            bold: 0,
+            align: 0,
+            format: 0,
+          },
+          {
+            type: 0,
+            content: " ",
+            bold: 0,
+            align: 1,
+            format: 0,
+          },
+          {
+            type: 0,
+            content: "Thank you for your visit!",
+            bold: 0,
+            align: 1,
+            format: 0,
+          },
+          {
+            type: 0,
+            content: "Please come again",
+            bold: 0,
+            align: 1,
+            format: 0,
+          },
+        ],
+      };
+    </script>
+  </head>
+  <body>
+    <script>
+      // Output the JSON data that the Bluetooth Print app will read
+      document.write(JSON.stringify(mockReceiptData.items));
+    </script>
+  </body>
+</html>
